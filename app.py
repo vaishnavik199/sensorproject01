@@ -4,11 +4,11 @@ from src.logger import logging as lg
 import os,sys
 
 
-from src.pipeline.train_pipeline import TrainingPipeline
+from src.pipeline.train_pipeline import TrainingPipline
 from src.pipeline.predict_pipeline import PredictionPipeline
 
 
-app = Flask(_name_)
+app = Flask(__name__)
 
 
 @app.route("/")
@@ -21,7 +21,7 @@ def home():
 @app.route("/train")
 def train_route():
     try:
-        train_pipeline = TrainingPipeline()
+        train_pipeline = TrainingPipline()
         train_pipeline.run_pipeline()
 
 
@@ -65,5 +65,5 @@ def upload():
 
 
 
-if _name_ == "_main_":
+if __name__ == "__main__":
     app.run(host="0.0.0.0", port=5000, debug= True)
