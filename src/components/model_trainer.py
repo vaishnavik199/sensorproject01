@@ -32,7 +32,7 @@ class ModelTrainerConfig:
 
 
 class ModelTrainer:
-    def _init_(self):
+    def __init__(self):
        
 
 
